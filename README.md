@@ -30,7 +30,7 @@ With OR-Audit installed from its P4 release:
 ./scripts/regenerate.sh
 ```
 
-This runs the public baseline packages and emits a static vector-preserving leaderboard under `site/`. Generated run artifacts are intentionally not committed; published rows must be reproducible from their pinned packages.
+This runs the public baseline packages and refreshes the committed static, vector-preserving leaderboard under `site/`. Full run bundles stay out of Git; every published row remains reproducible from its pinned packages and artifact head.
 
 ## License
 

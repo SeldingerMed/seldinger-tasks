@@ -1,0 +1,44 @@
+{
+  "format_version": "1",
+  "rows": [
+    {
+      "task_id": "lumen-nav-safe",
+      "task_version": "0",
+      "agent_identity": "seldingermed/lumen-linear@0+a000e3af8b0e38db910907f794c962d1277605753c04b75d1aa4cf8b88c58ba0",
+      "world_pin": "3c6bb39ecc916c73e81131b94353ad8deee62bd4",
+      "n": 30,
+      "headline": "safe_success",
+      "headline_true": 30,
+      "headline_false": 0,
+      "headline_unassessable": 0,
+      "headline_rate": 1.0,
+      "any_gate_failed": 0,
+      "metrics": {
+        "diverged": 0.0,
+        "max_pen": 0.0,
+        "raw_success": 1.0,
+        "safe_success": 1.0
+      },
+      "head": "f912a43b5385f6befa0e3a4e4a54bf9cf4525dc1ae8e5663b8ad2d8033a95b7c"
+    },
+    {
+      "task_id": "video-nextstep",
+      "task_version": "0",
+      "agent_identity": "example/video-predictor@0+b3fb48956e07f569fd9ddb86f53ad9a69ccc1f88239f62998b52fdea5496d817",
+      "world_pin": "",
+      "n": 3,
+      "headline": "next_step_correct",
+      "headline_true": 2,
+      "headline_false": 0,
+      "headline_unassessable": 1,
+      "headline_rate": 1.0,
+      "any_gate_failed": 1,
+      "metrics": {
+        "abstained": 0.3333333333333333,
+        "next_step_correct": 1.0,
+        "outcome_correct": 1.0
+      },
+      "head": "b09ed7b5bcde2e588a8f4773e313197ece5cf365b8e947abb8da75a16f391682"
+    }
+  ]
+}
