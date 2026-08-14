@@ -1,0 +1,8 @@
+format_version = "1"
+id = "example/video-predictor"
+agent_version = "0"
+port = "video-predict"
+kind = "frozen-model"
+weights_pin = "b3fb48956e07f569fd9ddb86f53ad9a69ccc1f88239f62998b52fdea5496d817"
+weights_path = "predictions.json"
+entrypoint = "predictor.py:load_predictor"

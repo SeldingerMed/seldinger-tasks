@@ -1,0 +1,67 @@
+format_version = "1"
+id = "angiostress-dias"
+task_version = "1"
+
+[metadata]
+title = "AngioStress v0.1 full release audit"
+modality = "dsa-video"
+tags = ["angiostress", "dias", "video-predict"]
+safety_critical = true
+
+[subject]
+kind = "model"
+
+[phi]
+class = "public"
+
+[environment]
+kind = "angiostress-contract"
+n_eval_episodes = 1
+seed_policy = "single-release-audit"
+inputs_path = "inputs.json"
+labels_path = "labels.json"
+contract_path = "contract.json"
+
+[port]
+id = "video-predict"
+observation = "dsa-sequence"
+prediction = "release-audit"
+
+[agent]
+kinds = ["frozen-model"]
+timeout_sec = 600.0
+
+[oracle]
+kind = "contract"
+
+[verifier]
+abstain_ok = false
+headline = "release_audit_passed"
+entrypoint = "verifier.py:load_verifier"
+
+[[verifier.gates]]
+id = "finite_metric_check"
+
+[[verifier.metrics]]
+id = "release_audit_passed"
+
+[[verifier.metrics]]
+id = "dias_prediction_count"
+
+[[verifier.metrics]]
+id = "cathaction_prediction_count"
+
+[[verifier.metrics]]
+id = "sam_vit_b_mean_dice"
+
+[[verifier.metrics]]
+id = "sam_vit_l_mean_dice"
+
+[[verifier.metrics]]
+id = "medsam_vit_b_mean_dice"
+
+[attestation]
+level = "none"
+
+[decision]
+emit_human_determination = false
