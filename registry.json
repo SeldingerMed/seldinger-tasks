@@ -1,5 +1,61 @@
 {
   "format_version": "1",
-  "datasets": [],
-  "agents": []
+  "datasets": [
+    {
+      "kind": "dataset",
+      "id": "seldingermed/angiostress",
+      "version": "1",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "59415d4ad35f9371de7ee2bdff6fe308df3321ce",
+      "path": "datasets/seldingermed/angiostress/1",
+      "digest": "0ed888f4e73a8b88ec2a7c44742a6b68332b5b984546fa5a5cd6b8d28459d531"
+    },
+    {
+      "kind": "dataset",
+      "id": "seldingermed/lumen-nav",
+      "version": "0",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "59415d4ad35f9371de7ee2bdff6fe308df3321ce",
+      "path": "datasets/seldingermed/lumen-nav/0",
+      "digest": "ed53a0ec913aa6934afe23f75bda33231776889c020a9ef8ec0f8673a0c94fbf"
+    },
+    {
+      "kind": "dataset",
+      "id": "seldingermed/video-nextstep",
+      "version": "0",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "59415d4ad35f9371de7ee2bdff6fe308df3321ce",
+      "path": "datasets/seldingermed/video-nextstep/0",
+      "digest": "05566022a0b777b63b30050067d413418c1f4e6160b01c403cae80d65d7ace9e"
+    }
+  ],
+  "agents": [
+    {
+      "kind": "agent",
+      "id": "example/video-predictor",
+      "version": "0",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "59415d4ad35f9371de7ee2bdff6fe308df3321ce",
+      "path": "agents/example/video-predictor/0",
+      "digest": "93152a80b1cb3593f5231216d44a55d14dd88b940b369cb1c043c2d133d2f2f1"
+    },
+    {
+      "kind": "agent",
+      "id": "seldingermed/cath-seg",
+      "version": "0",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "59415d4ad35f9371de7ee2bdff6fe308df3321ce",
+      "path": "agents/seldingermed/cath-seg/0",
+      "digest": "0278eb0649d1509499d168f5cd1393f7d6f60b40368a1f1e7062c26e67c4078a"
+    },
+    {
+      "kind": "agent",
+      "id": "seldingermed/lumen-linear",
+      "version": "0",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "59415d4ad35f9371de7ee2bdff6fe308df3321ce",
+      "path": "agents/seldingermed/lumen-linear/0",
+      "digest": "e23fcae04d6a6e09a89bf22e2cb3d69491de275ecd8513850594df051f361a17"
+    }
+  ]
 }
