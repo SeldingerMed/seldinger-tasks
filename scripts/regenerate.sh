@@ -22,4 +22,10 @@ mkdir -p "$RUNS"
   --registry "$REGISTRY" \
   --out "$RUNS/video-nextstep"
 
+"$OR_AUDIT" run \
+  -d seldingermed/angiostress@1 \
+  -a seldingermed/cath-seg@0 \
+  --registry "$REGISTRY" \
+  --out "$RUNS/angiostress"
+
 "$OR_AUDIT" leaderboard "$RUNS" --out "$ROOT/site"

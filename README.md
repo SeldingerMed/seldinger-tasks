@@ -11,6 +11,9 @@ Each registry row is an exact `org/name@version` identity backed by:
 
 The registry preserves vector results. It does not define procedure enums, collapse safety into an overall score, contain private clinical media, or make clinical-validation claims.
 
+Current reproducible rows: [`site/leaderboard.json`](site/leaderboard.json) and
+the dependency-free [`site/index.html`](site/index.html).
+
 ## Use
 
 ```bash
@@ -30,7 +33,11 @@ With OR-Audit installed from its P4 release:
 ./scripts/regenerate.sh
 ```
 
-This runs the public baseline packages and refreshes the committed static, vector-preserving leaderboard under `site/`. Full run bundles stay out of Git; every published row remains reproducible from its pinned packages and artifact head.
+This runs all three public baseline packages and refreshes the committed static,
+vector-preserving leaderboard under `site/`. The first AngioStress run restores
+about 7 GB of content-addressed public benchmark artifacts into the OR-Audit
+cache. Full run bundles stay out of Git; every published row remains reproducible
+from its pinned packages and artifact head.
 
 ## License
 

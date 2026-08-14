@@ -2,6 +2,28 @@
   "format_version": "1",
   "rows": [
     {
+      "task_id": "angiostress-dias",
+      "task_version": "1",
+      "agent_identity": "seldingermed/cath-seg@0+b62b36f8c5ca0216c8294e35c64de0c47853b7638db838517c751f7835e7c194",
+      "world_pin": "",
+      "n": 1,
+      "headline": "release_audit_passed",
+      "headline_true": 1,
+      "headline_false": 0,
+      "headline_unassessable": 0,
+      "headline_rate": 1.0,
+      "any_gate_failed": 0,
+      "metrics": {
+        "cathaction_prediction_count": 15675.0,
+        "dias_prediction_count": 345.0,
+        "medsam_vit_b_mean_dice": 0.11666014501214114,
+        "release_audit_passed": 1.0,
+        "sam_vit_b_mean_dice": 0.3658302060565347,
+        "sam_vit_l_mean_dice": 0.35771309274359847
+      },
+      "head": "eaf11df78714bb717c2488d90ad6631516a7558bf26143960281c88759ddd0ee"
+    },
+    {
       "task_id": "lumen-nav-safe",
       "task_version": "0",
       "agent_identity": "seldingermed/lumen-linear@0+a000e3af8b0e38db910907f794c962d1277605753c04b75d1aa4cf8b88c58ba0",
