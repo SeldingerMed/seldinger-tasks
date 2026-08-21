@@ -1,0 +1,10 @@
+format_version = "1"
+id = "seldingermed/video-nextstep"
+dataset_version = "1"
+headline = "next_step_correct"
+phi_class = "public"
+description = "Seed video-predict dataset. Procedure and label names are the task author's. Headline is next_step_correct; abstention is a legal outcome."
+
+tasks = [
+    "tasks/video-nextstep",
+]

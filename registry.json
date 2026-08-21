@@ -27,6 +27,15 @@
       "ref": "59415d4ad35f9371de7ee2bdff6fe308df3321ce",
       "path": "datasets/seldingermed/video-nextstep/0",
       "digest": "05566022a0b777b63b30050067d413418c1f4e6160b01c403cae80d65d7ace9e"
+    },
+    {
+      "kind": "dataset",
+      "id": "seldingermed/video-nextstep",
+      "version": "1",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "2b3f6eeb5088232ae4de491bfdfa3a14f577ad50",
+      "path": "datasets/seldingermed/video-nextstep/1",
+      "digest": "b644dcbd1f88f3f1c59ab055211cb143d231f7a3f4bd8a975cb162442f4c35c2"
     }
   ],
   "agents": [
@@ -38,6 +47,15 @@
       "ref": "59415d4ad35f9371de7ee2bdff6fe308df3321ce",
       "path": "agents/example/video-predictor/0",
       "digest": "93152a80b1cb3593f5231216d44a55d14dd88b940b369cb1c043c2d133d2f2f1"
+    },
+    {
+      "kind": "agent",
+      "id": "example/video-predictor",
+      "version": "1",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "2b3f6eeb5088232ae4de491bfdfa3a14f577ad50",
+      "path": "agents/example/video-predictor/1",
+      "digest": "303b82aea4762b59ba381920d97bd57d39309fb239b664aca00deacf09ac382f"
     },
     {
       "kind": "agent",
