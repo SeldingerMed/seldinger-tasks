@@ -1,0 +1,20 @@
+format_version = "2"
+id = "example/video-predictor"
+agent_version = "1"
+kind = "frozen-model"
+weights_pin = "4b8e244b4e5f9d371c9f9158beeab1e9810b4b1fb7d93e688422318148ad4e35"
+weights_path = "predictions.json"
+
+[[capabilities]]
+interface = "video-predict"
+interaction_modes = ["single-turn"]
+protocol_versions = ["1"]
+observations = ["video-clip"]
+outputs = ["next-step"]
+features = ["reasoning", "abstention"]
+
+[runtime]
+kind = "local"
+protocol_version = "1"
+entrypoint = "predictor.py:load_predictor"
+timeout_sec = 600.0

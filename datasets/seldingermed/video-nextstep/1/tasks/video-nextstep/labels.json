@@ -14,7 +14,9 @@
     },
     {
       "id": "clip-003",
-      "abstain": true
+      "next_step": "hold",
+      "outcome": "continue",
+      "unsafe": false
     }
   ]
 }
