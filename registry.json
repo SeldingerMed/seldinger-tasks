@@ -30,6 +30,15 @@
     },
     {
       "kind": "dataset",
+      "id": "seldingermed/lumen-nav",
+      "version": "1",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "c1e063ba1f8babb6f6b543fa8556546ff577aaeb",
+      "path": "datasets/seldingermed/lumen-nav/1",
+      "digest": "7cd4715ca4914933a6221309c165318153fddac9a37191caf7d0ed5a0f6ce14f"
+    },
+    {
+      "kind": "dataset",
       "id": "seldingermed/video-nextstep",
       "version": "0",
       "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
@@ -83,6 +92,15 @@
       "ref": "59415d4ad35f9371de7ee2bdff6fe308df3321ce",
       "path": "agents/seldingermed/lumen-linear/0",
       "digest": "e23fcae04d6a6e09a89bf22e2cb3d69491de275ecd8513850594df051f361a17"
+    },
+    {
+      "kind": "agent",
+      "id": "seldingermed/lumen-linear",
+      "version": "1",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "c1e063ba1f8babb6f6b543fa8556546ff577aaeb",
+      "path": "agents/seldingermed/lumen-linear/1",
+      "digest": "ede996458b2f2536f0edc8e11bee6d7dfb1e85f78ef192067b76f2c47cb5fbdb"
     }
   ]
 }
