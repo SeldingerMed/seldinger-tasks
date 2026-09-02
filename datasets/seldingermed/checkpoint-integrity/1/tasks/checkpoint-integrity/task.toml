@@ -1,0 +1,73 @@
+format_version = "2"
+id = "checkpoint-integrity"
+task_version = "1"
+
+[metadata]
+title = "Content-pinned checkpoint integrity"
+modality = "model-artifact"
+tags = ["checkpoint", "integrity"]
+safety_critical = false
+
+[subject]
+kind = "model"
+
+[phi]
+class = "public"
+
+[environment]
+kind = "frame-source"
+n_eval_episodes = 1
+seed_policy = "single-artifact"
+inputs_path = "inputs.json"
+labels_path = "labels.json"
+
+[interface]
+id = "checkpoint-audit"
+interaction_mode = "single-turn"
+protocol_version = "1"
+observations = ["checkpoint-request"]
+outputs = ["checkpoint-report"]
+
+[harness]
+interaction_mode = "single-turn"
+protocol_version = "1"
+max_steps = 1
+
+[agent]
+kinds = ["frozen-model"]
+timeout_sec = 120.0
+
+[oracle]
+kind = "contract"
+
+[verifier]
+abstain_ok = false
+headline = "archive_readable"
+entrypoint = "verifier.py:load_verifier"
+
+[[verifier.gates]]
+id = "archive_readable"
+inputs = { readable = "prediction.archive_readable" }
+fail_when = "readable == false"
+realization = "scalar-dsl"
+
+[[verifier.metrics]]
+id = "archive_readable"
+kind = "boolean"
+direction = "maximize"
+
+[[verifier.metrics]]
+id = "archive_members"
+kind = "continuous"
+direction = "neutral"
+
+[[verifier.metrics]]
+id = "size_bytes"
+kind = "continuous"
+direction = "neutral"
+
+[attestation]
+level = "none"
+
+[decision]
+emit_human_determination = false

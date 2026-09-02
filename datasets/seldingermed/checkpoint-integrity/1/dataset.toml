@@ -1,0 +1,10 @@
+format_version = "1"
+id = "seldingermed/checkpoint-integrity"
+dataset_version = "1"
+headline = "archive_readable"
+phi_class = "public"
+description = "Generic integrity check for a content-pinned packaged checkpoint."
+
+tasks = [
+    "tasks/checkpoint-integrity",
+]
