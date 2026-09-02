@@ -1,0 +1,18 @@
+format_version = "1"
+id = "seldingermed/lumen-nav"
+dataset_version = "2"
+headline = "safe_success"
+phi_class = "procedural"
+description = "Simulator robustness matrix across tube, stenosis, tortuosity, bilateral branch, and tortuous-tree scenes. It is not clinical validation."
+
+tasks = [
+    "tasks/lumen-tube",
+    "tasks/lumen-stenosis-mild",
+    "tasks/lumen-stenosis-severe",
+    "tasks/lumen-tortuous-mild",
+    "tasks/lumen-tortuous-severe",
+    "tasks/lumen-branch-left",
+    "tasks/lumen-branch-right",
+    "tasks/lumen-tortuous-tree-left",
+    "tasks/lumen-tortuous-tree-right",
+]

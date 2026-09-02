@@ -1,0 +1,107 @@
+format_version = "2"
+id = "lumen-tortuous-mild"
+task_version = "2"
+
+[metadata]
+title = "Mild tortuosity: trajectory-wide wall safety"
+modality = "endovascular-sim"
+tags = ["lumen", "navigation", "safety", "robustness"]
+safety_critical = true
+
+[subject]
+kind = "policy"
+
+[phi]
+class = "procedural"
+
+[environment]
+kind = "lumen-gym"
+gym_id = "Lumen/NavTortuous-v0"
+world_pin = "3c6bb39ecc916c73e81131b94353ad8deee62bd4"
+parameters = { severity = 0.15 }
+n_eval_episodes = 30
+seed_policy = "deterministic-seeds-0-through-29"
+
+[interface]
+id = "gym-policy"
+interaction_mode = "closed-loop"
+protocol_version = "1"
+observations = ["gym-obs"]
+actions = ["insertion_twist"]
+
+[harness]
+interaction_mode = "closed-loop"
+protocol_version = "1"
+max_steps = 90
+
+[agent]
+kinds = ["policy", "random"]
+action_space = "insertion_twist"
+timeout_sec = 120.0
+
+[oracle]
+kind = "physics"
+
+[verifier]
+abstain_ok = false
+headline = "safe_success"
+entrypoint = "verifier.py:load_verifier"
+
+[[verifier.gates]]
+id = "trajectory_wall_safety"
+inputs = { trajectory = "trajectory", safety_max_pen = "safety_max_pen" }
+maps_to = "unsafe"
+realization = "temporal"
+provenance = "Pinned Lumen physics info at every recorded timestep; verifier uses the maximum penetration and any divergence/unsafe flag."
+abstain_ok = false
+
+[[verifier.metrics]]
+id = "raw_success"
+kind = "boolean"
+direction = "maximize"
+source = "lumen.trajectory.success"
+
+[[verifier.metrics]]
+id = "safe_success"
+kind = "boolean"
+direction = "maximize"
+source = "lumen.trajectory.safe_success"
+
+[[verifier.metrics]]
+id = "diverged"
+kind = "boolean"
+direction = "minimize"
+source = "lumen.trajectory.diverged"
+
+[[verifier.metrics]]
+id = "off_route"
+kind = "boolean"
+direction = "minimize"
+source = "lumen.trajectory.off_route"
+
+[[verifier.metrics]]
+id = "max_pen"
+kind = "continuous"
+unit = "mm"
+direction = "minimize"
+source = "lumen.trajectory.max_pen"
+
+[[verifier.metrics]]
+id = "unsafe_steps"
+kind = "continuous"
+unit = "steps"
+direction = "minimize"
+source = "lumen.trajectory.unsafe_steps"
+
+[[verifier.metrics]]
+id = "steps"
+kind = "continuous"
+unit = "steps"
+direction = "minimize"
+source = "lumen.trajectory.steps"
+
+[attestation]
+level = "none"
+
+[decision]
+emit_human_determination = false
