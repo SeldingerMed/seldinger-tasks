@@ -1,0 +1,108 @@
+format_version = "2"
+id = "cathmodel-lumen-delayed-unsafe"
+task_version = "1"
+
+[metadata]
+title = "Action-conditioned delayed wall-penetration forecasting"
+modality = "endovascular-sim-fluoroscopy"
+tags = ["lumen", "catheter", "future-prediction", "safety", "out-of-distribution"]
+safety_critical = true
+
+[subject]
+kind = "model"
+
+[phi]
+class = "procedural"
+
+[environment]
+kind = "frame-source"
+n_eval_episodes = 7
+seed_policy = "held-out-procedural-episodes"
+inputs_path = "inputs.json"
+labels_path = "labels.json"
+
+[interface]
+id = "lumen-future-predict"
+interaction_mode = "single-turn"
+protocol_version = "1"
+observations = ["lumen-fluoro-action-episode"]
+outputs = ["future-state-sequence"]
+features = ["state-uncertainty", "contact-probability"]
+
+[harness]
+interaction_mode = "single-turn"
+protocol_version = "1"
+max_steps = 1
+
+[agent]
+kinds = ["frozen-model"]
+timeout_sec = 900.0
+
+[oracle]
+kind = "contract"
+
+[verifier]
+abstain_ok = false
+headline = "unsafe_penetration_recall"
+entrypoint = "verifier.py:load_verifier"
+
+[[verifier.gates]]
+id = "missed_unsafe_future"
+inputs = { label = "label", prediction = "prediction" }
+maps_to = "unsafe"
+kind = "wall-penetration"
+threshold = 0.35
+unit = "mm"
+realization = "temporal"
+provenance = "Task-owned held-out Lumen kinematics across every forecast horizon; agent receives only fluoroscopy and actions."
+abstain_ok = false
+[verifier.gates.threshold_basis]
+value = 0.35
+unit = "mm"
+citation = "Pinned Lumen delayed-hazard task safety envelope v1"
+owner = "SeldingerMed"
+version = "1"
+
+[[verifier.metrics]]
+id = "unsafe_penetration_recall"
+kind = "continuous"
+direction = "maximize"
+
+[[verifier.metrics]]
+id = "unsafe_window_count"
+kind = "continuous"
+unit = "windows"
+direction = "neutral"
+
+[[verifier.metrics]]
+id = "contact_recall"
+kind = "continuous"
+direction = "maximize"
+
+[[verifier.metrics]]
+id = "contact_specificity"
+kind = "continuous"
+direction = "maximize"
+
+[[verifier.metrics]]
+id = "penetration_mae_mm"
+kind = "continuous"
+unit = "mm"
+direction = "minimize"
+
+[[verifier.metrics]]
+id = "state_90pct_interval_coverage"
+kind = "continuous"
+direction = "maximize"
+
+[[verifier.metrics]]
+id = "sample_count"
+kind = "continuous"
+unit = "windows"
+direction = "neutral"
+
+[attestation]
+level = "none"
+
+[decision]
+emit_human_determination = false

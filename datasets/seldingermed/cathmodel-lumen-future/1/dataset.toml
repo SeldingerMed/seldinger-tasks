@@ -1,0 +1,8 @@
+format_version = "1"
+id = "seldingermed/cathmodel-lumen-future"
+dataset_version = "1"
+headline = "unsafe_penetration_recall"
+phi_class = "procedural"
+description = "Held-out delayed-hazard Lumen future-prediction stress test. This is simulator robustness evidence, not closed-loop or clinical safety validation."
+
+tasks = ["tasks/delayed-unsafe"]
