@@ -39,6 +39,15 @@
     },
     {
       "kind": "dataset",
+      "id": "seldingermed/lumen-nav",
+      "version": "2",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "b1830756b8750fca5f33d5dde2ee550d2a2bb673",
+      "path": "datasets/seldingermed/lumen-nav/2",
+      "digest": "c5d413ab2b76b528931ab938513ae8dead71d168b004793ddb60b3e7facf7e7e"
+    },
+    {
+      "kind": "dataset",
       "id": "seldingermed/video-nextstep",
       "version": "0",
       "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
