@@ -3,6 +3,15 @@
   "datasets": [
     {
       "kind": "dataset",
+      "id": "seldingermed/checkpoint-integrity",
+      "version": "1",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "6473f10e00f99033214a1941567ba7e329418e67",
+      "path": "datasets/seldingermed/checkpoint-integrity/1",
+      "digest": "8d8990ecea396ccef4c3d710817ff63c107530c52409f50a83f3dc1d0d062257"
+    },
+    {
+      "kind": "dataset",
       "id": "seldingermed/angiostress",
       "version": "1",
       "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
