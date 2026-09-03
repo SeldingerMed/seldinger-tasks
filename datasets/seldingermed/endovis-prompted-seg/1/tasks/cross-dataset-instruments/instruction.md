@@ -1,0 +1,1 @@
+Segment the surgical instrument inside the supplied box prompt. Return a PNG mask and the model's predicted IoU. This cross-dataset task measures technical mask geometry and confidence calibration only; it does not establish clinical safety.
