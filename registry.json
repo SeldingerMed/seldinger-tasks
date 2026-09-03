@@ -4,6 +4,15 @@
     {
       "kind": "dataset",
       "id": "seldingermed/endovis-prompted-seg",
+      "version": "2",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "535f03eec03f633db8503e1fc5d33e9fb7fdd7b9",
+      "path": "datasets/seldingermed/endovis-prompted-seg/2",
+      "digest": "605e2e9cfb7e1cb20da533b094e95cba0d5ca873a980e16e9511a3b8c1be507e"
+    },
+    {
+      "kind": "dataset",
+      "id": "seldingermed/endovis-prompted-seg",
       "version": "1",
       "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
       "ref": "9d3ec82159abffdfbce6a9bccff272dcbd1e2529",

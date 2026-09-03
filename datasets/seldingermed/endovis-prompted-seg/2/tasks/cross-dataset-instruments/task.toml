@@ -1,0 +1,101 @@
+format_version = "2"
+id = "endovis-prompted-seg-cross-dataset-instruments"
+task_version = "2"
+
+[metadata]
+title = "Cross-dataset per-instance box-prompted surgical instrument segmentation"
+modality = "laparoscopy-rgb"
+tags = ["laparoscopy", "image", "prompted-segmentation", "instrument", "cross-dataset"]
+safety_critical = false
+
+[subject]
+kind = "model"
+
+[phi]
+class = "public"
+
+[environment]
+kind = "frame-source"
+n_eval_episodes = 24
+seed_policy = "pinned-endovis17-val-per-instance-cross-sequence-pilot"
+inputs_path = "inputs.json"
+labels_path = "labels.json"
+
+[interface]
+id = "prompted-image-segmentation"
+interaction_mode = "single-turn"
+protocol_version = "1"
+observations = ["rgb-image", "box-prompt"]
+outputs = ["instrument-mask", "predicted-iou"]
+features = ["cross-dataset-segmentation"]
+
+[harness]
+interaction_mode = "single-turn"
+protocol_version = "1"
+max_steps = 1
+
+[agent]
+kinds = ["frozen-model"]
+timeout_sec = 600.0
+
+[oracle]
+kind = "contract"
+
+[verifier]
+abstain_ok = false
+headline = "measured_iou"
+entrypoint = "verifier.py:load_verifier"
+
+[[verifier.gates]]
+id = "segmentation_quality_screen"
+inputs = { label = "label.instrument_mask", prediction = "prediction.instrument_mask" }
+maps_to = "instrument-mask-geometry"
+kind = "image-geometry"
+realization = "task-owned"
+provenance = "Pinned CC-BY-4.0 EndoVis 2017 validation masks; each label is one 8-connected instrument component covering at least 1% of its frame. IoU and boundary-F1 thresholds are provisional technical pilot screens, not clinical limits."
+abstain_ok = false
+
+[[verifier.gates]]
+id = "predicted_iou_calibration_screen"
+inputs = { label = "label.instrument_mask", prediction = "prediction.instrument_mask", confidence = "prediction.predicted_iou" }
+maps_to = "confidence-calibration"
+kind = "calibration"
+realization = "task-owned"
+provenance = "Absolute predicted-IoU error threshold is a provisional technical pilot screen."
+abstain_ok = false
+
+[[verifier.metrics]]
+id = "measured_iou"
+kind = "continuous"
+direction = "maximize"
+
+[[verifier.metrics]]
+id = "dice"
+kind = "continuous"
+direction = "maximize"
+
+[[verifier.metrics]]
+id = "boundary_f1_2px"
+kind = "continuous"
+direction = "maximize"
+
+[[verifier.metrics]]
+id = "predicted_iou"
+kind = "continuous"
+direction = "maximize"
+
+[[verifier.metrics]]
+id = "predicted_iou_absolute_error"
+kind = "continuous"
+direction = "minimize"
+
+[[verifier.metrics]]
+id = "prompt_coverage"
+kind = "continuous"
+direction = "maximize"
+
+[attestation]
+level = "none"
+
+[decision]
+emit_human_determination = false

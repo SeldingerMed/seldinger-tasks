@@ -1,0 +1,1 @@
+Segment the single surgical instrument instance inside the supplied tight box prompt. Return a PNG mask and the model's predicted IoU. Components smaller than 1% of the frame are treated as annotation specks and excluded before evaluation. This cross-dataset task measures technical mask geometry and confidence calibration only; it does not establish clinical safety.

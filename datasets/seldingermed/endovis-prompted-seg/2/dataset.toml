@@ -1,0 +1,8 @@
+format_version = "1"
+id = "seldingermed/endovis-prompted-seg"
+dataset_version = "2"
+headline = "measured_iou"
+phi_class = "public"
+description = "Cross-dataset EndoVis 2017 per-instance pilot for box-prompted surgical instrument segmentation. It is a technical screen, not clinical validation."
+
+tasks = ["tasks/cross-dataset-instruments"]
