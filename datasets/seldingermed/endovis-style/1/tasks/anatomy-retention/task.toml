@@ -1,0 +1,88 @@
+format_version = "2"
+id = "endovis-style-anatomy-retention"
+task_version = "1"
+
+[metadata]
+title = "Laparoscopic structure retention under image style transfer"
+modality = "laparoscopy-rgb"
+tags = ["laparoscopy", "image", "style-transfer", "structure", "instrument"]
+safety_critical = false
+
+[subject]
+kind = "model"
+
+[phi]
+class = "public"
+
+[environment]
+kind = "frame-source"
+n_eval_episodes = 12
+seed_policy = "pinned-endovis17-val-cross-sequence-pilot"
+inputs_path = "inputs.json"
+labels_path = "labels.json"
+
+[interface]
+id = "image-style-transfer"
+interaction_mode = "single-turn"
+protocol_version = "1"
+observations = ["content-image", "style-image"]
+outputs = ["stylized-image"]
+features = ["anatomy-preservation"]
+
+[harness]
+interaction_mode = "single-turn"
+protocol_version = "1"
+max_steps = 1
+
+[agent]
+kinds = ["frozen-model"]
+timeout_sec = 600.0
+
+[oracle]
+kind = "contract"
+
+[verifier]
+abstain_ok = false
+headline = "structure_correlation"
+entrypoint = "verifier.py:load_verifier"
+
+[[verifier.gates]]
+id = "gross_structure_loss"
+inputs = { input = "input", label = "label", prediction = "prediction" }
+maps_to = "structure"
+kind = "image-geometry"
+realization = "task-owned"
+provenance = "Pinned CC-BY-4.0 EndoVis 2017 validation frames and instrument masks; thresholds are pilot screen values, not clinical limits."
+abstain_ok = false
+
+[[verifier.metrics]]
+id = "structure_correlation"
+kind = "continuous"
+direction = "maximize"
+
+[[verifier.metrics]]
+id = "grayscale_ssim"
+kind = "continuous"
+direction = "maximize"
+
+[[verifier.metrics]]
+id = "instrument_boundary_retention"
+kind = "continuous"
+direction = "maximize"
+
+[[verifier.metrics]]
+id = "color_shift"
+kind = "continuous"
+direction = "neutral"
+
+[[verifier.metrics]]
+id = "identity_psnr_db"
+kind = "continuous"
+unit = "dB"
+direction = "maximize"
+
+[attestation]
+level = "none"
+
+[decision]
+emit_human_determination = false

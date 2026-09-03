@@ -1,0 +1,8 @@
+format_version = "1"
+id = "seldingermed/endovis-style"
+dataset_version = "1"
+headline = "structure_correlation"
+phi_class = "public"
+description = "Cross-sequence EndoVis 2017 pilot for structure retention in laparoscopic image-to-image models. It is not clinical validation."
+
+tasks = ["tasks/anatomy-retention"]

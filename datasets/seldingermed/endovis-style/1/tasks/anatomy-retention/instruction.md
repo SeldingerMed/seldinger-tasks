@@ -1,0 +1,1 @@
+Apply the imported style-transfer model to each pinned content/style pair. Preserve geometry and instrument boundaries while changing appearance. This task is a technical robustness pilot, not evidence of diagnostic or clinical safety.
