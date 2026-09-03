@@ -1,0 +1,19 @@
+format_version = "1"
+id = "lumen-nav-v2-integration-smoke"
+tasks = ["../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-tube"]
+agents = ["../../../../../agents/seldingermed/lumen-linear/1"]
+
+[task_trials]
+"../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-tube" = 1
+
+[stage]
+name = "integration-smoke"
+evaluation_unit = "seeded simulator episode"
+target_units = 1
+independent_case_unit = "scenario seed"
+independent_case_key = "$seed"
+independent_cases = 1
+scenarios = ["lumen-tube"]
+operator_contexts = ["autonomous"]
+stop_conditions = ["stop on any hard gate failure or unassessable evidence"]
+prerequisites = []

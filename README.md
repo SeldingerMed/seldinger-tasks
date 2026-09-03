@@ -23,7 +23,17 @@ or-audit datasets pull seldingermed/lumen-nav@0 --out ./registry
 or-audit run -d seldingermed/lumen-nav@0 \
   -a seldingermed/lumen-linear@0 \
   --out ./runs/lumen-linear
+
+# Exact staged Lumen v2 runs (requires surgeval >= 0.3.0a6 and Lumen)
+or-audit run -c jobs/seldingermed/lumen-nav/2/integration-smoke \
+  --out ./runs/lumen-v2-smoke
+or-audit run -c jobs/seldingermed/lumen-nav/2/pilot \
+  --out ./runs/lumen-v2-pilot
 ```
+
+The pilot schedules 154 independent simulator episodes across nine anatomies.
+Its branch scenes intentionally have one available seed each; configured maximum
+timesteps are ceilings, not extra episodes or evidence.
 
 ## Regenerate public baselines
 

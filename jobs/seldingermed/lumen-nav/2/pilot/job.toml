@@ -1,0 +1,47 @@
+format_version = "1"
+id = "lumen-nav-v2-pilot"
+tasks = [
+  "../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-tube",
+  "../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-stenosis-mild",
+  "../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-stenosis-severe",
+  "../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-tortuous-mild",
+  "../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-tortuous-severe",
+  "../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-branch-left",
+  "../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-branch-right",
+  "../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-tortuous-tree-left",
+  "../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-tortuous-tree-right",
+]
+agents = ["../../../../../agents/seldingermed/lumen-linear/1"]
+
+[task_trials]
+"../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-tube" = 30
+"../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-stenosis-mild" = 30
+"../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-stenosis-severe" = 30
+"../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-tortuous-mild" = 30
+"../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-tortuous-severe" = 30
+"../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-branch-left" = 1
+"../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-branch-right" = 1
+"../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-tortuous-tree-left" = 1
+"../../../../../datasets/seldingermed/lumen-nav/2/tasks/lumen-tortuous-tree-right" = 1
+
+[stage]
+name = "pilot"
+evaluation_unit = "seeded simulator episode"
+target_units = 154
+independent_case_unit = "scenario seed"
+independent_case_key = "$seed"
+independent_cases = 154
+scenarios = [
+  "lumen-tube",
+  "lumen-stenosis-mild",
+  "lumen-stenosis-severe",
+  "lumen-tortuous-mild",
+  "lumen-tortuous-severe",
+  "lumen-branch-left",
+  "lumen-branch-right",
+  "lumen-tortuous-tree-left",
+  "lumen-tortuous-tree-right",
+]
+operator_contexts = ["autonomous"]
+stop_conditions = ["stop on any hard gate failure or unassessable evidence"]
+prerequisites = ["integration-smoke"]
