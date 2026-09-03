@@ -1,0 +1,13 @@
+format_version = "1"
+id = "seldingermed/surrol-needle-reach"
+dataset_version = "2"
+headline = "raw_success"
+phi_class = "procedural"
+description = "Matched SurRoL NeedleReach task-performance pilot. Metrics-only simulator evidence; not physical or clinical safety evidence."
+
+tasks = [
+    "tasks/surrol-needle-reach-nominal",
+    "tasks/surrol-needle-reach-observation-dropout-start",
+    "tasks/surrol-needle-reach-observation-noise-high",
+    "tasks/surrol-needle-reach-actuator-hold-start",
+]
