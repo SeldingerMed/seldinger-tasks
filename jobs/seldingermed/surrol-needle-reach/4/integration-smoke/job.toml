@@ -1,0 +1,19 @@
+format_version = "1"
+id = "surrol-needle-reach-v4-integration-smoke"
+tasks = ["../../../../../datasets/seldingermed/surrol-needle-reach/4/tasks/surrol-needle-reach-nominal"]
+agents = ["../../../../../agents/seldingermed/surrol-needle-reach-oracle/1"]
+
+[task_trials]
+"../../../../../datasets/seldingermed/surrol-needle-reach/4/tasks/surrol-needle-reach-nominal" = 1
+
+[stage]
+name = "integration-smoke"
+evaluation_unit = "seeded simulator episode"
+target_units = 1
+independent_case_unit = "simulator seed"
+independent_case_key = "$seed"
+independent_cases = 1
+scenarios = ["surrol-needle-reach-nominal"]
+operator_contexts = ["autonomous execution"]
+stop_conditions = ["stop on interface, provenance, non-finite output, or unassessable success"]
+prerequisites = []

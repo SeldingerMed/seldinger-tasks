@@ -8,6 +8,7 @@ ROOT = (
 JOB_ROOT = (
     Path(__file__).resolve().parents[1] / "jobs/seldingermed/surrol-needle-reach/3"
 )
+VERSION = "3"
 WORLD_PIN = "8d92f5e5b094441d12e03de7db7f944e0e20da0d"
 ADAPTER_DIGEST = "c781abb7cb7a38905f80175e4e2960b1ee2cf3463e4786e032d3c71bd832bac0"
 
@@ -69,7 +70,7 @@ def task_toml(
 ) -> str:
     return f'''format_version = "2"
 id = "{task_id}"
-task_version = "3"
+task_version = "{VERSION}"
 
 [metadata]
 title = "SurRoL NeedleReach: {title}"
@@ -159,9 +160,9 @@ def main() -> None:
         root.joinpath("verifier.py").write_text(VERIFIER)
 
     ROOT.joinpath("dataset.toml").write_text(
-        """format_version = "1"
+        f"""format_version = "1"
 id = "seldingermed/surrol-needle-reach"
-dataset_version = "3"
+dataset_version = "{VERSION}"
 headline = "raw_success"
 phi_class = "procedural"
 description = "Matched SurRoL NeedleReach task-performance pilot. Metrics-only simulator evidence; not physical or clinical safety evidence."
@@ -172,11 +173,11 @@ tasks = [
         + "\n]\n"
     )
 
-    relative = "../../../../../datasets/seldingermed/surrol-needle-reach/3/tasks"
+    relative = f"../../../../../datasets/seldingermed/surrol-needle-reach/{VERSION}/tasks"
     smoke = JOB_ROOT / "integration-smoke/job.toml"
     smoke.parent.mkdir(parents=True, exist_ok=True)
     smoke.write_text(f'''format_version = "1"
-id = "surrol-needle-reach-v3-integration-smoke"
+id = "surrol-needle-reach-v{VERSION}-integration-smoke"
 tasks = ["{relative}/surrol-needle-reach-nominal"]
 agents = ["../../../../../agents/seldingermed/surrol-needle-reach-oracle/1"]
 
@@ -199,8 +200,8 @@ prerequisites = []
     pilot = JOB_ROOT / "pilot/job.toml"
     pilot.parent.mkdir(parents=True, exist_ok=True)
     pilot.write_text(
-        """format_version = "1"
-id = "surrol-needle-reach-v3-pilot"
+        f"""format_version = "1"
+id = "surrol-needle-reach-v{VERSION}-pilot"
 tasks = [
 """
         + "\n".join(f'  "{relative}/{task_id}",' for task_id in task_ids)
