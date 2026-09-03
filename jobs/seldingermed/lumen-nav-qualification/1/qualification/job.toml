@@ -1,0 +1,219 @@
+format_version = "1"
+id = "lumen-nav-qualification-v1"
+tasks = [
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tube-nominal",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tube-observation-dropout-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tube-observation-dropout-post-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tube-observation-noise-low",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tube-observation-noise-high",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tube-actuator-hold-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tube-actuator-hold-post-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-mild-nominal",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-mild-observation-dropout-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-mild-observation-dropout-post-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-mild-observation-noise-low",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-mild-observation-noise-high",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-mild-actuator-hold-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-mild-actuator-hold-post-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-moderate-nominal",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-moderate-observation-dropout-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-moderate-observation-dropout-post-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-moderate-observation-noise-low",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-moderate-observation-noise-high",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-moderate-actuator-hold-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-moderate-actuator-hold-post-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-severe-nominal",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-severe-observation-dropout-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-severe-observation-dropout-post-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-severe-observation-noise-low",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-severe-observation-noise-high",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-severe-actuator-hold-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-severe-actuator-hold-post-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-mild-nominal",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-mild-observation-dropout-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-mild-observation-dropout-post-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-mild-observation-noise-low",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-mild-observation-noise-high",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-mild-actuator-hold-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-mild-actuator-hold-post-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-moderate-nominal",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-moderate-observation-dropout-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-moderate-observation-dropout-post-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-moderate-observation-noise-low",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-moderate-observation-noise-high",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-moderate-actuator-hold-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-moderate-actuator-hold-post-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-severe-nominal",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-severe-observation-dropout-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-severe-observation-dropout-post-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-severe-observation-noise-low",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-severe-observation-noise-high",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-severe-actuator-hold-start",
+  "../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-severe-actuator-hold-post-start",
+]
+agents = ["../../../../../agents/seldingermed/lumen-linear/1"]
+
+[task_trials]
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tube-nominal" = 205
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tube-observation-dropout-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tube-observation-dropout-post-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tube-observation-noise-low" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tube-observation-noise-high" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tube-actuator-hold-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tube-actuator-hold-post-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-mild-nominal" = 205
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-mild-observation-dropout-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-mild-observation-dropout-post-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-mild-observation-noise-low" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-mild-observation-noise-high" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-mild-actuator-hold-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-mild-actuator-hold-post-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-moderate-nominal" = 205
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-moderate-observation-dropout-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-moderate-observation-dropout-post-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-moderate-observation-noise-low" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-moderate-observation-noise-high" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-moderate-actuator-hold-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-moderate-actuator-hold-post-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-severe-nominal" = 205
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-severe-observation-dropout-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-severe-observation-dropout-post-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-severe-observation-noise-low" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-severe-observation-noise-high" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-severe-actuator-hold-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-stenosis-severe-actuator-hold-post-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-mild-nominal" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-mild-observation-dropout-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-mild-observation-dropout-post-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-mild-observation-noise-low" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-mild-observation-noise-high" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-mild-actuator-hold-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-mild-actuator-hold-post-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-moderate-nominal" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-moderate-observation-dropout-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-moderate-observation-dropout-post-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-moderate-observation-noise-low" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-moderate-observation-noise-high" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-moderate-actuator-hold-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-moderate-actuator-hold-post-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-severe-nominal" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-severe-observation-dropout-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-severe-observation-dropout-post-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-severe-observation-noise-low" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-severe-observation-noise-high" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-severe-actuator-hold-start" = 204
+"../../../../../datasets/seldingermed/lumen-nav-qualification/1/tasks/lumen-q-tortuous-severe-actuator-hold-post-start" = 204
+
+[stage]
+name = "qualification"
+evaluation_unit = "seeded simulator episode"
+target_units = 10000
+independent_case_unit = "geometry seed"
+independent_case_key = "$seed"
+independent_cases = 1432
+scenarios = [
+  "lumen-q-tube-nominal",
+  "lumen-q-tube-observation-dropout-start",
+  "lumen-q-tube-observation-dropout-post-start",
+  "lumen-q-tube-observation-noise-low",
+  "lumen-q-tube-observation-noise-high",
+  "lumen-q-tube-actuator-hold-start",
+  "lumen-q-tube-actuator-hold-post-start",
+  "lumen-q-stenosis-mild-nominal",
+  "lumen-q-stenosis-mild-observation-dropout-start",
+  "lumen-q-stenosis-mild-observation-dropout-post-start",
+  "lumen-q-stenosis-mild-observation-noise-low",
+  "lumen-q-stenosis-mild-observation-noise-high",
+  "lumen-q-stenosis-mild-actuator-hold-start",
+  "lumen-q-stenosis-mild-actuator-hold-post-start",
+  "lumen-q-stenosis-moderate-nominal",
+  "lumen-q-stenosis-moderate-observation-dropout-start",
+  "lumen-q-stenosis-moderate-observation-dropout-post-start",
+  "lumen-q-stenosis-moderate-observation-noise-low",
+  "lumen-q-stenosis-moderate-observation-noise-high",
+  "lumen-q-stenosis-moderate-actuator-hold-start",
+  "lumen-q-stenosis-moderate-actuator-hold-post-start",
+  "lumen-q-stenosis-severe-nominal",
+  "lumen-q-stenosis-severe-observation-dropout-start",
+  "lumen-q-stenosis-severe-observation-dropout-post-start",
+  "lumen-q-stenosis-severe-observation-noise-low",
+  "lumen-q-stenosis-severe-observation-noise-high",
+  "lumen-q-stenosis-severe-actuator-hold-start",
+  "lumen-q-stenosis-severe-actuator-hold-post-start",
+  "lumen-q-tortuous-mild-nominal",
+  "lumen-q-tortuous-mild-observation-dropout-start",
+  "lumen-q-tortuous-mild-observation-dropout-post-start",
+  "lumen-q-tortuous-mild-observation-noise-low",
+  "lumen-q-tortuous-mild-observation-noise-high",
+  "lumen-q-tortuous-mild-actuator-hold-start",
+  "lumen-q-tortuous-mild-actuator-hold-post-start",
+  "lumen-q-tortuous-moderate-nominal",
+  "lumen-q-tortuous-moderate-observation-dropout-start",
+  "lumen-q-tortuous-moderate-observation-dropout-post-start",
+  "lumen-q-tortuous-moderate-observation-noise-low",
+  "lumen-q-tortuous-moderate-observation-noise-high",
+  "lumen-q-tortuous-moderate-actuator-hold-start",
+  "lumen-q-tortuous-moderate-actuator-hold-post-start",
+  "lumen-q-tortuous-severe-nominal",
+  "lumen-q-tortuous-severe-observation-dropout-start",
+  "lumen-q-tortuous-severe-observation-dropout-post-start",
+  "lumen-q-tortuous-severe-observation-noise-low",
+  "lumen-q-tortuous-severe-observation-noise-high",
+  "lumen-q-tortuous-severe-actuator-hold-start",
+  "lumen-q-tortuous-severe-actuator-hold-post-start",
+]
+event_injections = ["observation-dropout-start", "observation-dropout-post-start", "observation-noise-low", "observation-noise-high", "actuator-hold-start", "actuator-hold-post-start"]
+operator_contexts = ["autonomous execution; no human operator input reaches the policy"]
+stop_conditions = ["terminate an unsafe episode and preserve its failure evidence", "do not promote the model if any hard gate fails or evidence is not assessable"]
+prerequisites = ["integration-smoke", "pilot"]
+
+[stage.independent_case_groups]
+"lumen-q-tube-nominal" = "tube"
+"lumen-q-tube-observation-dropout-start" = "tube"
+"lumen-q-tube-observation-dropout-post-start" = "tube"
+"lumen-q-tube-observation-noise-low" = "tube"
+"lumen-q-tube-observation-noise-high" = "tube"
+"lumen-q-tube-actuator-hold-start" = "tube"
+"lumen-q-tube-actuator-hold-post-start" = "tube"
+"lumen-q-stenosis-mild-nominal" = "stenosis-mild"
+"lumen-q-stenosis-mild-observation-dropout-start" = "stenosis-mild"
+"lumen-q-stenosis-mild-observation-dropout-post-start" = "stenosis-mild"
+"lumen-q-stenosis-mild-observation-noise-low" = "stenosis-mild"
+"lumen-q-stenosis-mild-observation-noise-high" = "stenosis-mild"
+"lumen-q-stenosis-mild-actuator-hold-start" = "stenosis-mild"
+"lumen-q-stenosis-mild-actuator-hold-post-start" = "stenosis-mild"
+"lumen-q-stenosis-moderate-nominal" = "stenosis-moderate"
+"lumen-q-stenosis-moderate-observation-dropout-start" = "stenosis-moderate"
+"lumen-q-stenosis-moderate-observation-dropout-post-start" = "stenosis-moderate"
+"lumen-q-stenosis-moderate-observation-noise-low" = "stenosis-moderate"
+"lumen-q-stenosis-moderate-observation-noise-high" = "stenosis-moderate"
+"lumen-q-stenosis-moderate-actuator-hold-start" = "stenosis-moderate"
+"lumen-q-stenosis-moderate-actuator-hold-post-start" = "stenosis-moderate"
+"lumen-q-stenosis-severe-nominal" = "stenosis-severe"
+"lumen-q-stenosis-severe-observation-dropout-start" = "stenosis-severe"
+"lumen-q-stenosis-severe-observation-dropout-post-start" = "stenosis-severe"
+"lumen-q-stenosis-severe-observation-noise-low" = "stenosis-severe"
+"lumen-q-stenosis-severe-observation-noise-high" = "stenosis-severe"
+"lumen-q-stenosis-severe-actuator-hold-start" = "stenosis-severe"
+"lumen-q-stenosis-severe-actuator-hold-post-start" = "stenosis-severe"
+"lumen-q-tortuous-mild-nominal" = "tortuous-mild"
+"lumen-q-tortuous-mild-observation-dropout-start" = "tortuous-mild"
+"lumen-q-tortuous-mild-observation-dropout-post-start" = "tortuous-mild"
+"lumen-q-tortuous-mild-observation-noise-low" = "tortuous-mild"
+"lumen-q-tortuous-mild-observation-noise-high" = "tortuous-mild"
+"lumen-q-tortuous-mild-actuator-hold-start" = "tortuous-mild"
+"lumen-q-tortuous-mild-actuator-hold-post-start" = "tortuous-mild"
+"lumen-q-tortuous-moderate-nominal" = "tortuous-moderate"
+"lumen-q-tortuous-moderate-observation-dropout-start" = "tortuous-moderate"
+"lumen-q-tortuous-moderate-observation-dropout-post-start" = "tortuous-moderate"
+"lumen-q-tortuous-moderate-observation-noise-low" = "tortuous-moderate"
+"lumen-q-tortuous-moderate-observation-noise-high" = "tortuous-moderate"
+"lumen-q-tortuous-moderate-actuator-hold-start" = "tortuous-moderate"
+"lumen-q-tortuous-moderate-actuator-hold-post-start" = "tortuous-moderate"
+"lumen-q-tortuous-severe-nominal" = "tortuous-severe"
+"lumen-q-tortuous-severe-observation-dropout-start" = "tortuous-severe"
+"lumen-q-tortuous-severe-observation-dropout-post-start" = "tortuous-severe"
+"lumen-q-tortuous-severe-observation-noise-low" = "tortuous-severe"
+"lumen-q-tortuous-severe-observation-noise-high" = "tortuous-severe"
+"lumen-q-tortuous-severe-actuator-hold-start" = "tortuous-severe"
+"lumen-q-tortuous-severe-actuator-hold-post-start" = "tortuous-severe"

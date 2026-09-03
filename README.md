@@ -29,11 +29,18 @@ or-audit run -c jobs/seldingermed/lumen-nav/2/integration-smoke \
   --out ./runs/lumen-v2-smoke
 or-audit run -c jobs/seldingermed/lumen-nav/2/pilot \
   --out ./runs/lumen-v2-pilot
+or-audit run -c jobs/seldingermed/lumen-nav-qualification/1/qualification \
+  --out ./runs/lumen-qualification-v1
 ```
 
 The pilot schedules 154 independent simulator episodes across nine anatomies.
 Its branch scenes intentionally have one available seed each; configured maximum
 timesteps are ceilings, not extra episodes or evidence.
+
+The qualification job schedules exactly 10,000 episodes across 49 matched
+geometry-by-interface-condition cells. Its 1,432 geometry-seed groups are the
+independent cases; nominal and perturbed conditions are nested repeats, not
+10,000 independent anatomies. Run it only after smoke and pilot gates pass.
 
 ## Regenerate public baselines
 
