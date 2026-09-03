@@ -1,0 +1,34 @@
+format_version = "1"
+id = "surrol-needle-reach-v5-pilot"
+tasks = [
+  "../../../../../datasets/seldingermed/surrol-needle-reach/5/tasks/surrol-needle-reach-nominal",
+  "../../../../../datasets/seldingermed/surrol-needle-reach/5/tasks/surrol-needle-reach-observation-dropout-start",
+  "../../../../../datasets/seldingermed/surrol-needle-reach/5/tasks/surrol-needle-reach-observation-noise-high",
+  "../../../../../datasets/seldingermed/surrol-needle-reach/5/tasks/surrol-needle-reach-actuator-hold-start",
+]
+agents = ["../../../../../agents/seldingermed/surrol-needle-reach-oracle/1"]
+
+[task_trials]
+"../../../../../datasets/seldingermed/surrol-needle-reach/5/tasks/surrol-needle-reach-nominal" = 30
+"../../../../../datasets/seldingermed/surrol-needle-reach/5/tasks/surrol-needle-reach-observation-dropout-start" = 30
+"../../../../../datasets/seldingermed/surrol-needle-reach/5/tasks/surrol-needle-reach-observation-noise-high" = 30
+"../../../../../datasets/seldingermed/surrol-needle-reach/5/tasks/surrol-needle-reach-actuator-hold-start" = 30
+
+[stage]
+name = "pilot"
+evaluation_unit = "seeded simulator episode"
+target_units = 120
+independent_case_unit = "matched simulator seed"
+independent_case_key = "$seed"
+independent_cases = 30
+scenarios = ["surrol-needle-reach-nominal", "surrol-needle-reach-observation-dropout-start", "surrol-needle-reach-observation-noise-high", "surrol-needle-reach-actuator-hold-start"]
+event_injections = ["observation-dropout-start", "observation-noise-high", "actuator-hold-start"]
+operator_contexts = ["autonomous execution"]
+stop_conditions = ["stop if success is unassessable", "do not make force, tissue-safety, hardware, or clinical claims"]
+prerequisites = ["integration-smoke"]
+
+[stage.independent_case_groups]
+"surrol-needle-reach-nominal" = "needle-reach"
+"surrol-needle-reach-observation-dropout-start" = "needle-reach"
+"surrol-needle-reach-observation-noise-high" = "needle-reach"
+"surrol-needle-reach-actuator-hold-start" = "needle-reach"
