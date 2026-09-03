@@ -1,0 +1,72 @@
+format_version = "2"
+id = "surrol-needle-reach-nominal"
+task_version = "3"
+
+[metadata]
+title = "SurRoL NeedleReach: no injected interface fault"
+modality = "robotic-kinematics"
+tags = ["surrol", "needle-reach", "pybullet", "metrics-only", "interface-fault"]
+safety_critical = false
+
+[subject]
+kind = "policy"
+
+[phi]
+class = "procedural"
+
+[environment]
+kind = "pybullet"
+gym_id = "legacy:surrol.gym:NeedleReach-v0"
+world_pin = "8d92f5e5b094441d12e03de7db7f944e0e20da0d"
+adapter = "or_audit.eval.sim.gym_bridge:make_gym_bridge"
+adapter_digest = "c781abb7cb7a38905f80175e4e2960b1ee2cf3463e4786e032d3c71bd832bac0"
+parameters = { }
+n_eval_episodes = 30
+seed_policy = "matched-seeds-0-through-29"
+metrics_only = true
+
+[environment.capabilities]
+physics = true
+closed_loop = true
+counterfactual = false
+requires_gym_id = true
+requires_world_pin = true
+requires_contract = false
+determinism_class = "unmeasured"
+
+[interface]
+id = "gym-policy"
+interaction_mode = "closed-loop"
+protocol_version = "1"
+observations = ["surrol-goal-observation"]
+actions = ["surrol-psm-delta5"]
+
+[harness]
+interaction_mode = "closed-loop"
+protocol_version = "1"
+max_steps = 50
+
+[agent]
+kinds = ["policy", "random"]
+action_space = "surrol-psm-delta5"
+timeout_sec = 120.0
+
+[oracle]
+kind = "physics"
+
+[verifier]
+abstain_ok = true
+headline = "raw_success"
+entrypoint = "verifier.py:load_verifier"
+
+[[verifier.metrics]]
+id = "raw_success"
+kind = "boolean"
+direction = "maximize"
+source = "surrol.info.is_success"
+
+[attestation]
+level = "none"
+
+[decision]
+emit_human_determination = false
