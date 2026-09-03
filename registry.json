@@ -3,6 +3,15 @@
   "datasets": [
     {
       "kind": "dataset",
+      "id": "seldingermed/endovis-style",
+      "version": "1",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "90a68345eda5c97d7ad9f971b05996ac2b6d6ae2",
+      "path": "datasets/seldingermed/endovis-style/1",
+      "digest": "69d356a98c1c6ae0dcacd107e9ed90c308565f6b68548010ac1a6523fdac262e"
+    },
+    {
+      "kind": "dataset",
       "id": "seldingermed/cathmodel-lumen-future",
       "version": "1",
       "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
