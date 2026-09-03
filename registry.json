@@ -3,6 +3,15 @@
   "datasets": [
     {
       "kind": "dataset",
+      "id": "seldingermed/surrol-needle-reach",
+      "version": "1",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "adcf46df05bd371a986fe25a85804f270c2ac423",
+      "path": "datasets/seldingermed/surrol-needle-reach/1",
+      "digest": "d99c26415b6a71cc143ab81aeca3e21811ee81618c39dc11dac1356a0690ab84"
+    },
+    {
+      "kind": "dataset",
       "id": "seldingermed/lumen-nav-qualification",
       "version": "1",
       "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
@@ -111,6 +120,15 @@
     }
   ],
   "agents": [
+    {
+      "kind": "agent",
+      "id": "seldingermed/surrol-needle-reach-oracle",
+      "version": "1",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "adcf46df05bd371a986fe25a85804f270c2ac423",
+      "path": "agents/seldingermed/surrol-needle-reach-oracle/1",
+      "digest": "b7ec5fc6c104de723ec6bcc205aec1c6eeea30eab33af40968d62e2002462ff1"
+    },
     {
       "kind": "agent",
       "id": "example/video-predictor",
