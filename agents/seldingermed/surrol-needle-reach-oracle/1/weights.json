@@ -1,0 +1,5 @@
+{
+  "deadband": 1.5,
+  "gain": 0.3,
+  "position_scale": 0.01
+}

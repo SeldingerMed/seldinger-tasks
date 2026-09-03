@@ -1,0 +1,79 @@
+format_version = "2"
+id = "surrol-needle-reach-observation-dropout-start"
+task_version = "1"
+
+[metadata]
+title = "SurRoL NeedleReach: zeroed goal observation at the initial decision"
+modality = "robotic-kinematics"
+tags = ["surrol", "needle-reach", "pybullet", "metrics-only", "interface-fault"]
+safety_critical = false
+
+[subject]
+kind = "policy"
+
+[phi]
+class = "procedural"
+
+[environment]
+kind = "pybullet"
+gym_id = "legacy:surrol.gym:NeedleReach-v0"
+world_pin = "68a60bd1e399c819c0241d0fbd1f201b129ec4b1"
+adapter = "or_audit.eval.sim.gym_bridge:make_gym_bridge"
+adapter_digest = "62ac03c711b3d4b6123d4dc72a2984428ddaa10e52d33dc5075b3ca782724e74"
+parameters = { }
+n_eval_episodes = 30
+seed_policy = "matched-seeds-0-through-29"
+metrics_only = true
+
+[environment.capabilities]
+physics = true
+closed_loop = true
+counterfactual = false
+requires_gym_id = true
+requires_world_pin = true
+requires_contract = false
+determinism_class = "unmeasured"
+
+[[perturbations]]
+id = "observation-dropout-start"
+version = "1"
+description = "Matched pilot condition: observation-dropout-start."
+kind = "harness-observation-zero"
+at_step = 0
+
+[interface]
+id = "gym-policy"
+interaction_mode = "closed-loop"
+protocol_version = "1"
+observations = ["surrol-goal-observation"]
+actions = ["surrol-psm-delta5"]
+
+[harness]
+interaction_mode = "closed-loop"
+protocol_version = "1"
+max_steps = 50
+
+[agent]
+kinds = ["policy", "random"]
+action_space = "surrol-psm-delta5"
+timeout_sec = 120.0
+
+[oracle]
+kind = "physics"
+
+[verifier]
+abstain_ok = true
+headline = "raw_success"
+entrypoint = "verifier.py:load_verifier"
+
+[[verifier.metrics]]
+id = "raw_success"
+kind = "boolean"
+direction = "maximize"
+source = "surrol.info.is_success"
+
+[attestation]
+level = "none"
+
+[decision]
+emit_human_determination = false

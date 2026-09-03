@@ -1,0 +1,19 @@
+format_version = "2"
+id = "seldingermed/surrol-needle-reach-oracle"
+agent_version = "1"
+kind = "policy"
+weights_pin = "8915e973c7da5941ed7e5c17831dc6e35e8b596ad86358ef6e5419774ef7d1aa"
+weights_path = "weights.json"
+
+[[capabilities]]
+interface = "gym-policy"
+interaction_modes = ["closed-loop"]
+protocol_versions = ["1"]
+observations = ["surrol-goal-observation"]
+actions = ["surrol-psm-delta5"]
+
+[runtime]
+kind = "local"
+protocol_version = "1"
+entrypoint = "policy.py:load_policy"
+timeout_sec = 120.0
