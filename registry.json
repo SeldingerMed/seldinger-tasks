@@ -3,6 +3,15 @@
   "datasets": [
     {
       "kind": "dataset",
+      "id": "seldingermed/lumen-nav-qualification",
+      "version": "1",
+      "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
+      "ref": "aad6db35337f0080be075b362fb706d2c255ed58",
+      "path": "datasets/seldingermed/lumen-nav-qualification/1",
+      "digest": "1c816fc438706009278ec7b20e14ab14f71558c72fbcd6e4eeeade2da6a01595"
+    },
+    {
+      "kind": "dataset",
       "id": "seldingermed/endovis-prompted-seg",
       "version": "2",
       "repository": "https://github.com/SeldingerMed/seldinger-tasks.git",
